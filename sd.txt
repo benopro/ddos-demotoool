@@ -1,0 +1,39 @@
+# --- CÁCH DÙNG / USAGE GUIDE ---
+
+"""
+CÁCH DÙNG (How to use):
+
+1. Chạy tool qua terminal (Command Prompt/Terminal):
+
+    python ddos.py --url https://example.com --threads 10 --duration 60 --rate 100
+
+    Các tham số (parameters):
+        --url          URL của mục tiêu (Target URL, bắt buộc hoặc nhập khi chạy)
+        --threads      Số lượng task song song (async, default: 10)
+        --duration     Thời gian tấn công (giây, default: 120)
+        --rate         Số request mỗi giây trên mỗi task (default: 100)
+        --endpoints    Danh sách endpoint, ngăn cách bởi dấu phẩy (/,/login,/api)
+        --headers      Custom headers dạng JSON (vd: '{"Authorization":"Bearer xyz"}')
+        --timeout      Thời gian timeout mỗi request (giây, default: 3)
+        --proxy        Proxy (http(s)://ip:port hoặc nhiều proxy cách nhau bằng dấu phẩy)
+        --log          Bật log request ra màn hình
+        --control      Chạy ở chế độ server điều khiển từ xa (TLS và auth)
+
+    Ví dụ nâng cao:
+        python ddos.py --url https://example.com --threads 20 --duration 100 --rate 200 --log
+        python ddos.py --url http://target.local --proxy http://127.0.0.1:8080,https://1.2.3.4:3128
+
+2. Nếu không truyền đủ tham số, tool sẽ hỏi thông tin bổ sung khi chạy.
+
+3. Chạy chế độ điều khiển server (Control server):
+
+    - Control server nghe trên 127.0.0.1:65099 (mặc định), cần mật khẩu (mặc định: "changeme")
+    - Đổi mật khẩu bằng cách đặt biến môi trường DDOS_CTRL_PASS hoặc sửa trong mã nguồn.
+    - Client kết nối đến server để điều khiển từ xa (xem hàm control_server).
+
+4. Chỉ sử dụng cho mục đích hợp pháp, kiểm thử, nghiên cứu bảo mật. KHÔNG lạm dụng!
+
+-------------------------------------
+"""
+
+# (Phần còn lại giữ nguyên mã nguồn như cũ.)
