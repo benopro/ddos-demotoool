@@ -1,5 +1,6 @@
 # ddos-demotoool
-cd ddos
+cd ddos-demotoool
+
 python3 -m venv venv
 source venv/bin/activate
 
